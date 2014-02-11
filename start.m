@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear
 %load data
-load housevotes84.mat % variable name data
+load krvskp.mat % variable name data
 % row major order
 % numDim or  #Feature = column size - 1 [positive integer values coressponding each category]
 % 1st column is class (positive integer class labels)
@@ -34,7 +34,8 @@ for f = 1:k
     end
     n = n+partSize;
     
-    yc = classifyNaiveBayes(trnData, tstData); % 1 - Naive Bayes (default), 2 - Percetron
+    %yc = classifyNaiveBayes(trnData, tstData);
+    yc = classifyPerceptron(trnData, tstData);
     yt = tstData(:,1);
     [Cm, tA,  ppV, Sen, F1, BAC]=getConfMtx(yt,yc);
     testCVResult(f,:) = [tA, ppV(1), ppV(2), Sen(1), Sen(2), F1];

@@ -34,8 +34,10 @@ for i = 1:size(tstData,1)
         aV = tstData(i,j+1);
         pt = pA{j};
         pc = pt(pt(:,1) == aV, 2:end);
-        pC(1) = pC(1) + log(pc(1)) + log(classDist(1));
-        pC(2) = pC(2) + log(pc(2)) + log(classDist(2));
+        if size(pc,1) > 0
+            pC(1) = pC(1) + log(pc(1)) + log(classDist(1));
+            pC(2) = pC(2) + log(pc(2)) + log(classDist(2));
+        end
     end
     pC(1) = exp(pC(1));
     pC(2) = exp(pC(2));
