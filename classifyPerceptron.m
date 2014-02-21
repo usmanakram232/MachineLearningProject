@@ -8,5 +8,6 @@
 % 08/02/2014
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function yc = classifyPerceptron(trnData, tstData)
+% f(x) = w' x + w_0 
 
 end
